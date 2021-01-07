@@ -41,9 +41,23 @@ my_object.times_called[:some_method] # returns 1
 For MethodCallCount::CallableStub
 
 ```
-my_stub = MethodCallCount::new
+my_stub = MethodCallCount::CallableStub::new
 my_stub.call(arg: 'value')
 my_stub.called_with[:arg] # returns 'value'
+```
+
+You can stub the return by providing the value you want returned as an argument in the constructor
+
+```
+my_stub = MethodCallCount::CallableStub::new('return_value')
+my_stub.call(arg: 'value') # returns 'return_value'
+```
+
+You could also pass a block, which CallableStub will yield the input kwargs to
+
+```
+my_stub = MethodCallCount::CallableStub::new{|options| options[:arg]}
+my_stub.call(arg: 'value') # returns 'value'
 ```
 
 ## Development
