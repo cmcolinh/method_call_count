@@ -2,6 +2,8 @@
 
 This gem is a helper for Rspec or other testing frameworks, in particular in situations where you are using dependency injection, and you want to verify whether a certain input will result in that dependency being called.This will mixin a method into your class #times_called which is a hash that will be incremented each time a method is invoked on an object.  This count is enabled on a class.
 
+There is also separately a class, MethodCallCount::CallableStub, which can be aused as a stub for classes that implement #call with kwargs or an option hash to capture the kwargs that were sent.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -20,9 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-
-
-Example
+For MethodCallCount
 
 ```
 class MyClass
@@ -38,6 +38,13 @@ my_object.some_method
 my_object.times_called[:some_method] # returns 1
 ```
 
+For MethodCallCount::CallableStub
+
+```
+my_stub = MethodCallCount::new
+my_stub.call(arg: 'value')
+my_stub.called_with[:arg] # returns 'value'
+```
 
 ## Development
 
