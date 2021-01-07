@@ -2,7 +2,7 @@ lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'method_call_count/version'
 
-Gem::Specification.new 'method_call_count', '0.1.0' do |spec|
+Gem::Specification.new 'method_call_count', '0.1.1' do |spec|
   spec.name          = 'method_call_count'
   spec.version       = MethodCallCount::VERSION
   spec.authors       = ['Colin Horner']
