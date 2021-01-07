@@ -1,8 +1,6 @@
 # MethodCallCount
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/method_call_count`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem is a helper for Rspec or other testing frameworks, in particular in situations where you are using dependency injection, and you want to verify whether a certain input will result in that dependency being called.This will mixin a method into your class #times_called which is a hash that will be incremented each time a method is invoked on an object.  This count is enabled on a class.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-This library is a helper for Rspec or other testing frameworks, in particular in situations where you are using dependency injection, and you want to verify whether a certain input will result in that dependency being called.This will mixin a method into your class #times_called which is a hash that will be incremented each time a method is invoked on an object.  This count is enabled on a class.
+
 
 Example
 
@@ -39,7 +37,6 @@ my_object = MyClass::new
 my_object.some_method
 my_object.times_called[:some_method] # returns 1
 ```
-
 
 
 ## Development
